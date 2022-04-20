@@ -27,4 +27,9 @@ public class CellTreasure extends Cell{
     public void setTreasure(int treasure) {
         this.treasure = treasure;
     }
+
+    @Override
+    public String result(){
+        return "T-"+getCoordinate().getY()+"-"+getCoordinate().getX()+"-"+treasure;
+    }
 }

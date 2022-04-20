@@ -42,6 +42,9 @@ public abstract class Cell {
         this.coordinate = coordinate;
     }
 
+    public String result(){
+        return "";
+    }
     @Override
     public String toString() {
         return "Cell{" +

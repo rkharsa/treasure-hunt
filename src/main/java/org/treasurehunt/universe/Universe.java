@@ -2,6 +2,7 @@ package org.treasurehunt.universe;
 
 import org.treasurehunt.player.Coordinate;
 import org.treasurehunt.universe.cell.Cell;
+import org.treasurehunt.universe.cell.CellItem;
 import org.treasurehunt.universe.cell.CellPlain;
 
 public class Universe {
@@ -27,15 +28,38 @@ public class Universe {
         }
     }
 
-    public void display() {
+    public void displayGrid() {
         for (int row = 0; row < dimension.getRow(); row++) {
             for (int col = 0; col < dimension.getColumn(); col++) {
-                System.out.print("|"+this.map[row][col].getCellItem());
-                if(this.map[row][col].getPlayer()!=null){
-                    System.out.print(this.map[row][col].getPlayer().getName()+"("+this.map[row][col].getPlayer().getNumberOfTreasureFound()+")");
+                Cell cell = this.map[row][col];
+                if (cell.getPlayer() != null) {
+                    System.out.print(cell.getPlayer().getName() + "(" + cell.getPlayer().getNumberOfTreasureFound() + ")");
+                } else {
+                    System.out.print(cell.getCellItem().getSymbol());
                 }
+                System.out.print("                   ");
             }
             System.out.println();
+        }
+    }
+
+    public void displayList() {
+        System.out.println("C-"+dimension.getColumn()+"-"+dimension.getRow());
+        for (int row = 0; row < dimension.getRow(); row++) {
+            for (int col = 0; col < dimension.getColumn(); col++) {
+                Cell cell = this.map[row][col];
+                if (cell.getPlayer() != null) {
+                    System.out.println(cell.getPlayer().result());
+                } else {
+                    if(!CellItem.PLAIN.equals(cell.getCellItem())){
+                        System.out.println(cell.result());
+                    }
+
+
+                }
+
+            }
+
         }
     }
 

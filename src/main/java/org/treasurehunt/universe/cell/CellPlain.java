@@ -13,4 +13,6 @@ public class CellPlain extends  Cell{
     public void actionOnCell(Player player) throws ProhibitedPositionException {
 
     }
+
+
 }

@@ -28,7 +28,8 @@ public class App {
                 }
             }
             scanner.close();
-            universe.display();
+            universe.displayGrid();
+            universe.displayList();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (CommandLineInvalidArgumentException e) {

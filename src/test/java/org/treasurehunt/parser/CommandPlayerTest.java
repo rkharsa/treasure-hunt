@@ -31,7 +31,6 @@ public class CommandPlayerTest {
         Player player = new Player(coordinate, Orientation.NORTH, "Rani");
         Player resultPlayer = universe.getCell(coordinate).getPlayer();
 
-        universe.display();
 
         assertEquals(player.toString(), resultPlayer.toString());
     }
@@ -70,7 +69,6 @@ A(Rani)|.|.|.|
         Player player = new Player(coordinate, Orientation.SOUTH, "Rani");
         Player resultPlayer = universe.getCell(coordinate).getPlayer();
 
-        universe.display();
 
         assertEquals(player.toString(), resultPlayer.toString());
     }
@@ -85,10 +83,10 @@ A(Rani)|.|.|.|
         CommandTreasure commandTreasure = new CommandTreasure();
         commandTreasure.execute(treasureCommand, universe);
 
-        treasureCommand = "T-0-1-1";
+        treasureCommand = "T-1-0-1";
         commandTreasure.execute(treasureCommand, universe);
 
-        treasureCommand = "T-0-2-1";
+        treasureCommand = "T-2-0-1";
         commandTreasure.execute(treasureCommand, universe);
 
         String command = "A-Rani-0-0-E-AAAADAAA";
@@ -101,7 +99,7 @@ A(Rani)|.|.|.|
         player.setNumberOfTreasureFound(2);
         Player resultPlayer = universe.getCell(coordinate).getPlayer();
 
-        universe.display();
+
 
         assertEquals(player.toString(), resultPlayer.toString());
         assertEquals(player.toString(), resultPlayer.toString());
@@ -118,19 +116,19 @@ A(Rani)|.|.|.|
         CommandTreasure commandTreasure = new CommandTreasure();
         commandTreasure.execute(treasureCommand, universe);
 
-        treasureCommand = "T-0-1-1";
+        treasureCommand = "T-1-0-1";
         commandTreasure.execute(treasureCommand, universe);
 
-        treasureCommand = "T-0-2-1";
+        treasureCommand = "T-2-0-1";
         commandTreasure.execute(treasureCommand, universe);
 
-        treasureCommand = "T-1-2-1";
+        treasureCommand = "T-2-1-1";
         commandTreasure.execute(treasureCommand, universe);
 
         treasureCommand = "T-2-2-1";
         commandTreasure.execute(treasureCommand, universe);
 
-        treasureCommand = "T-3-1-1";
+        treasureCommand = "T-1-3-1";
         commandTreasure.execute(treasureCommand, universe);
 
         String command = "A-Rani-0-0-E-AAAADAAADA";
@@ -143,7 +141,7 @@ A(Rani)|.|.|.|
         player.setNumberOfTreasureFound(5);
         Player resultPlayer = universe.getCell(coordinate).getPlayer();
 
-        universe.display();
+
 
         assertEquals(player.toString(), resultPlayer.toString());
         assertEquals(player.toString(), resultPlayer.toString());

@@ -17,7 +17,7 @@ public class CommandTreasureTest  {
         Universe universe = new Universe(new Dimension(10,15));
         universe.initMap();
 
-        String command = "T-0-1-1";
+        String command = "T-1-0-1";
 
         CommandTreasure commandTreasure = new CommandTreasure();
         commandTreasure.execute(command,universe);
@@ -34,7 +34,7 @@ public class CommandTreasureTest  {
         Universe universe = new Universe(new Dimension(10,15));
         universe.initMap();
 
-        String command = "T-0-1-2";
+        String command = "T-1-0-2";
 
         CommandTreasure commandTreasure = new CommandTreasure();
         commandTreasure.execute(command,universe);

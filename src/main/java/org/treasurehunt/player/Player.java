@@ -82,10 +82,13 @@ public class Player {
     this.numberOfTreasureFound = numberOfTreasureFound;
   }
 
+  public String result(){
+    return "A-"+name+"-"+coordinate.result()+"-"+orientation.getOrientationStr()+"-"+numberOfTreasureFound;
+  }
   @Override
   public String toString() {
     return "Player{" +
-            "coordinate=" + coordinate.toString() +
+            "coordinate=" + coordinate +
             ", orientation=" + orientation +
             ", name='" + name + '\'' +
             ", numberOfTreasureFound=" + numberOfTreasureFound +

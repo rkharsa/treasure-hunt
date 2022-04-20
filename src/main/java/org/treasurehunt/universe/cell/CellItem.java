@@ -2,9 +2,16 @@ package org.treasurehunt.universe.cell;
 
 public enum CellItem {
     MOUNTAIN("M"),
-    PLAIN("P"),
+    PLAIN("."),
     TREASURE("T");
 
-    CellItem(String m) {
+    String symbol;
+    CellItem(String  str) {
+        symbol = str;
+    }
+
+
+    public String getSymbol() {
+        return symbol;
     }
 }
