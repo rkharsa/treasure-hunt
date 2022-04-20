@@ -23,8 +23,8 @@ public class CommandPlayer implements CommandHandlerStrategy {
             throw new CommandLineInvalidArgumentException();
         }
         String name = command[1];
-        int x = Integer.parseInt(command[2]);
-        int y = Integer.parseInt(command[3]);
+        int y = Integer.parseInt(command[2]);
+        int x = Integer.parseInt(command[3]);
         Coordinate pos = new Coordinate(x, y);
         Orientation orientation = Orientation.fromString(command[4]);
         String movementSequence = command[5];

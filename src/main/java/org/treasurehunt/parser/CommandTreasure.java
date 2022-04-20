@@ -12,8 +12,8 @@ public class CommandTreasure implements CommandHandlerStrategy {
   public void execute(String line,Universe universe) throws CommandLineInvalidArgumentException {
     String[] command = line.split("-");
     if (command.length != 4)  { throw new CommandLineInvalidArgumentException();}
-    int x = Integer.parseInt(command[1]);
-    int y = Integer.parseInt(command[2]);
+    int y = Integer.parseInt(command[1]);
+    int x = Integer.parseInt(command[2]);
     Coordinate coordinate = new Coordinate(x,y);
     int numberOfTreasure = Integer.parseInt(command[3]);
     Cell oldCell = universe.getCell(coordinate);

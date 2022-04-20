@@ -12,8 +12,8 @@ public class CommandMountain implements CommandHandlerStrategy {
         if (command.length != 3) {
             throw new CommandLineInvalidArgumentException();
         }
-        int x = Integer.parseInt(command[1]);
-        int y = Integer.parseInt(command[2]);
+        int y = Integer.parseInt(command[1]);
+        int x = Integer.parseInt(command[2]);
         Coordinate coordinate = new Coordinate(x, y);
         CellMountain cellMountain = new CellMountain(coordinate, null);
         universe.setCell(coordinate, cellMountain);
