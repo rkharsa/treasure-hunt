@@ -2,15 +2,21 @@ package org.treasurehunt.universe;
 
 import org.treasurehunt.player.Coordinate;
 
+import java.lang.reflect.Array;
+
 public class Universe {
   private Dimension dimension;
   private Cell[][] map;
 
   public Universe(Dimension dimension) {
+
     this.dimension = dimension;
     this.map = new Cell[dimension.getRow()][dimension.getColumn()];
   }
 
+  public Universe(){
+
+  }
   public void initMap() {
     for (int row = 0; row < dimension.getRow(); row++) {
       for (int col = 0; col < dimension.getColumn(); col++) {
@@ -24,8 +30,7 @@ public class Universe {
       return coordinate.getX() >= 0
               && coordinate.getX() < dimension.getRow()
               && coordinate.getY() >=0
-              && coordinate.getY() < dimension.getColumn()
-              && map[coordinate.getX()][coordinate.getY()].getCellItem()!=CellItem.MOUNTAIN ;
+              && coordinate.getY() < dimension.getColumn();
   }
 
   public Dimension getDimension() {

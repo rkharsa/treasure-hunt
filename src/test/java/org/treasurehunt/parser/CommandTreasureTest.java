@@ -89,7 +89,7 @@ public class CommandTreasureTest  {
     }
 
     @Test()
-    public void whenCommandHasCoordinateInvalid_thenThrowsCommandLineInvalidException()  {
+    public void whenCommandHasCoordinateInvalid_thenThrowsArrayIndexOutOfBoundsException()  {
         Universe universe = new Universe(new Dimension(10,15));
         universe.initMap();
 
