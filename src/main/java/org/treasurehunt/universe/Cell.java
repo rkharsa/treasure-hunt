@@ -3,38 +3,22 @@ package org.treasurehunt.universe;
 import org.treasurehunt.player.Coordinate;
 import org.treasurehunt.player.Player;
 
-public class Cell {
-    private  int treasure;
+public abstract class Cell {
     private Coordinate coordinate;
     private CellItem cellItem;
     private Player player;
 
-    public Cell(int treasure, CellItem cellItem, Coordinate coordinate, Player player) {
-        this.treasure = treasure;
+    protected Cell( CellItem cellItem, Coordinate coordinate, Player player) {
         this.cellItem = cellItem;
         this.coordinate=coordinate ;
         this.player = player;
     }
-    public boolean isMountain(){
-        return CellItem.MOUNTAIN.equals(cellItem);
-    }
 
-    public boolean isTreasure(){
-        return CellItem.TREASURE.equals(cellItem);
-    }
-
-
-    public void removeTreasure(){
-        if(treasure<0){return;}
-        this.treasure--;
-    }
-
-
+    public abstract void  actionOnCell(Player player) throws ProhibitedPositionException;
 
     @Override
     public String toString() {
         return "Cell{" +
-                "treasure=" + treasure +
                 ", coordinate=" + coordinate.toString() +
                 ", cellItem=" + cellItem +
                 '}';
@@ -55,13 +39,6 @@ public class Cell {
         this.cellItem = cellItem;
     }
 
-    public int getTreasure() {
-        return treasure;
-    }
-
-    public void setTreasure(int treasure) {
-        this.treasure = treasure;
-    }
 
     public Coordinate getCoordinate() {
         return coordinate;

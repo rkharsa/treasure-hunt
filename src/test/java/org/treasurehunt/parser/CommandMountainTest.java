@@ -19,8 +19,8 @@ public class CommandMountainTest  {
 
         String command = "M-0-0";
 
-        CommandMountain commandMountain = new CommandMountain();
-        commandMountain.execute(command,universe);
+        CommandMountain commandMountain = new CommandMountain(universe);
+        commandMountain.execute(command);
 
         CellItem expectedCellItemMountain  = CellItem.MOUNTAIN;
         CellItem resultCellItemMountain  = universe.getCell(new Coordinate(0,0)).getCellItem();
@@ -35,11 +35,11 @@ public class CommandMountainTest  {
 
         String command = "M-0";
 
-        CommandMountain commandMountain = new CommandMountain();
+        CommandMountain commandMountain = new CommandMountain(universe);
 
 
         assertThrows(CommandLineInvalidArgumentException.class, () -> {
-            commandMountain.execute(command,universe);
+            commandMountain.execute(command);
         });
     }
 
@@ -50,11 +50,11 @@ public class CommandMountainTest  {
 
         String command = "M";
 
-        CommandMountain commandMountain = new CommandMountain();
+        CommandMountain commandMountain = new CommandMountain(universe);
 
 
         assertThrows(CommandLineInvalidArgumentException.class, () -> {
-            commandMountain.execute(command,universe);
+            commandMountain.execute(command);
         });
     }
 
@@ -65,11 +65,11 @@ public class CommandMountainTest  {
 
         String command = "M-0-900";
 
-        CommandMountain commandMountain = new CommandMountain();
+        CommandMountain commandMountain = new CommandMountain(universe);
 
 
         assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
-            commandMountain.execute(command,universe);
+            commandMountain.execute(command);
         });
     }
 }

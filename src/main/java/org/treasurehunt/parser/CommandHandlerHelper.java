@@ -11,7 +11,7 @@ public class CommandHandlerHelper {
         this.commandHandlerStrategy = commandHandlerStrategy;
     }
 
-    public void execute(String line, Universe universe) throws CommandLineInvalidArgumentException {
-        commandHandlerStrategy.execute(line,universe);
+    public void execute(String line) throws CommandLineInvalidArgumentException {
+        commandHandlerStrategy.execute(line);
     }
 }

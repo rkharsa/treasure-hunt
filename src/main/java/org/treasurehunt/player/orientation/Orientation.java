@@ -1,4 +1,4 @@
-package org.treasurehunt.player;
+package org.treasurehunt.player.orientation;
 
 public enum Orientation {
     NORTH,

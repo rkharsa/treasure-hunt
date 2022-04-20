@@ -8,7 +8,7 @@ import org.treasurehunt.universe.Universe;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
-public class CommandTreasureTest  {
+/*public class CommandTreasureTest  {
 
     @Test
     public void should_set_1_treasures_in_cell() throws CommandLineInvalidArgumentException {
@@ -105,4 +105,4 @@ public class CommandTreasureTest  {
 
 
 
-}
+}*/

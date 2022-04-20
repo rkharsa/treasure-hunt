@@ -1,11 +1,12 @@
 package org.treasurehunt.player;
 
-import org.treasurehunt.universe.Universe;
+import org.treasurehunt.player.movement.Movement;
+import org.treasurehunt.player.orientation.Orientation;
+import org.treasurehunt.player.orientation.Rotate;
 import org.treasurehunt.universe.Cell;
+import org.treasurehunt.universe.ProhibitedPositionException;
+import org.treasurehunt.universe.Universe;
 import org.treasurehunt.universe.CellItem;
-
-import java.util.List;
-import java.util.Arrays;
 
 public class Player {
   private Coordinate coordinate;
@@ -13,57 +14,39 @@ public class Player {
   private  String name;
   private int numberOfTreasureFound ;
 
-  public Player(Coordinate coordinate, Orientation orientation,String name) {
+  public Player(Coordinate coordinate, Orientation orientation, String name) {
     this.coordinate = coordinate;
     this.orientation = orientation;
     this.name = name;
   }
 
-  public void turnLeft() {
-    List<Orientation> orientations = Arrays.asList(Orientation.values());
-    int indexOfOrientation = orientations.indexOf(orientation);
-    orientation = orientations.get((indexOfOrientation + 1) % 4);
-  }
 
-  public void turnRight() {
-    List<Orientation> orientations = Arrays.asList(Orientation.values());
-    int indexOfOrientation = orientations.indexOf(orientation);
-    orientation = orientations.get(((indexOfOrientation - 1 % 4) + 4) % 4);
-  }
-
-  public void setNewPositionToPlayer(Universe universe, Coordinate newCoordinate){
-    if(!universe.isValidCoordinate(newCoordinate) ||  universe.getCell(newCoordinate).isMountain()) {
+  public void setNewPositionToPlayer(Universe universe,Coordinate oldCoordinate, Coordinate newCoordinate) throws ProhibitedPositionException {
+    if(!universe.isValidCoordinate(newCoordinate) || isMountain(universe, newCoordinate)) {
       return;
     }
-    universe.getCell(newCoordinate).setPlayer(this);
+    Cell oldPos = universe.getCell(oldCoordinate);
+    oldPos.setPlayer(null);
+    Cell newPos =universe.getCell(newCoordinate);
+    newPos.setPlayer(this);
     this.setCoordinate(newCoordinate);
+    newPos.actionOnCell(newPos.getPlayer());
   }
 
-  public void forward(Universe universe) {
-    int x = coordinate.getX();
-    int y = coordinate.getY();
-    switch (orientation){
-      case EST:
-        y +=1;
-        break;
-      case WEST:
-        y-=1;
-        break;
-      case NORTH:
-        x-=1;
-        break;
-      case SOUTH:
-        x+=1;
-        break;
-    }
-    setNewPositionToPlayer(universe,new Coordinate(x,y));
+  private boolean isMountain(Universe universe, Coordinate newCoordinate) {
+    return CellItem.MOUNTAIN.equals(universe.getCell(newCoordinate).getCellItem());
   }
 
-  void findTreasure(Cell cell){
-    if(cell.getCellItem()== CellItem.TREASURE){
-      cell.removeTreasure();
+  public void move(Universe universe, Movement movement) throws ProhibitedPositionException {
+    setNewPositionToPlayer(universe,movement.getCurrentPos(),movement.move());
+  }
+
+  public void rotate(Rotate rotate) {
+    orientation= rotate.rotate();
+  }
+
+  public void findTreasure(){
       this.numberOfTreasureFound++;
-    }
   }
 
   public Orientation getOrientation() {

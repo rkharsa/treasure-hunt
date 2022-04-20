@@ -21,7 +21,7 @@ public class Universe {
     for (int row = 0; row < dimension.getRow(); row++) {
       for (int col = 0; col < dimension.getColumn(); col++) {
         Coordinate pos = new Coordinate(row, col);
-        this.map[row][col] = new Cell(0, CellItem.PLAIN, pos, null);
+        this.map[row][col] = new CellPlain(  pos, null);
       }
     }
   }
