@@ -1,14 +1,16 @@
 package org.treasurehunt.parser;
 
 import org.junit.Test;
+import org.treasurehunt.parser.exceptions.CommandLineInvalidArgumentException;
 import org.treasurehunt.player.Coordinate;
+import org.treasurehunt.universe.cell.CellTreasure;
 import org.treasurehunt.universe.Dimension;
 import org.treasurehunt.universe.Universe;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
-/*public class CommandTreasureTest  {
+public class CommandTreasureTest  {
 
     @Test
     public void should_set_1_treasures_in_cell() throws CommandLineInvalidArgumentException {
@@ -21,7 +23,7 @@ import static org.junit.Assert.assertThrows;
         commandTreasure.execute(command,universe);
 
         int expectedTreasureNumber  = 1;
-        int resultTreasureCount  = universe.getCell(new Coordinate(0,1)).getTreasure();
+        int resultTreasureCount  =((CellTreasure)universe.getCell(new Coordinate(0,1))).getTreasure();
 
         assertEquals(expectedTreasureNumber,resultTreasureCount);
 
@@ -38,7 +40,7 @@ import static org.junit.Assert.assertThrows;
         commandTreasure.execute(command,universe);
 
         int expectedTreasureNumber  = 2;
-        int resultTreasureCount  = universe.getCell(new Coordinate(0,1)).getTreasure();
+        int resultTreasureCount  = ((CellTreasure)universe.getCell(new Coordinate(0,1))).getTreasure();
 
         assertEquals(expectedTreasureNumber,resultTreasureCount);
 
@@ -105,4 +107,4 @@ import static org.junit.Assert.assertThrows;
 
 
 
-}*/
+}

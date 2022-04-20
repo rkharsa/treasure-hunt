@@ -1,4 +1,4 @@
-package org.treasurehunt.universe;
+package org.treasurehunt.universe.cell;
 
 public enum CellItem {
     MOUNTAIN("M"),

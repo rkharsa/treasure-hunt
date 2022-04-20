@@ -1,4 +1,4 @@
-package org.treasurehunt.parser;
+package org.treasurehunt.parser.exceptions;
 
 public class CommandLineInvalidArgumentException extends Exception{
     public CommandLineInvalidArgumentException() {

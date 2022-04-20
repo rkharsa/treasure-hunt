@@ -1,7 +1,8 @@
-package org.treasurehunt.universe;
+package org.treasurehunt.universe.cell;
 
 import org.treasurehunt.player.Coordinate;
 import org.treasurehunt.player.Player;
+import org.treasurehunt.universe.ProhibitedPositionException;
 
 public abstract class Cell {
     private Coordinate coordinate;
@@ -16,13 +17,6 @@ public abstract class Cell {
 
     public abstract void  actionOnCell(Player player) throws ProhibitedPositionException;
 
-    @Override
-    public String toString() {
-        return "Cell{" +
-                ", coordinate=" + coordinate.toString() +
-                ", cellItem=" + cellItem +
-                '}';
-    }
 
     public Player getPlayer() {
         return player;
@@ -46,5 +40,14 @@ public abstract class Cell {
 
     public void setCoordinate(Coordinate coordinate) {
         this.coordinate = coordinate;
+    }
+
+    @Override
+    public String toString() {
+        return "Cell{" +
+                "coordinate=" + coordinate +
+                ", cellItem=" + cellItem +
+                ", player=" + player +
+                '}';
     }
 }

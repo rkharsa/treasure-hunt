@@ -1,9 +1,9 @@
 package org.treasurehunt.parser;
 
-import junit.framework.TestCase;
 import org.junit.Test;
+import org.treasurehunt.parser.exceptions.CommandLineInvalidArgumentException;
 import org.treasurehunt.player.Coordinate;
-import org.treasurehunt.universe.CellItem;
+import org.treasurehunt.universe.cell.CellItem;
 import org.treasurehunt.universe.Dimension;
 import org.treasurehunt.universe.Universe;
 
@@ -19,8 +19,8 @@ public class CommandMountainTest  {
 
         String command = "M-0-0";
 
-        CommandMountain commandMountain = new CommandMountain(universe);
-        commandMountain.execute(command);
+        CommandMountain commandMountain = new CommandMountain();
+        commandMountain.execute(command,universe);
 
         CellItem expectedCellItemMountain  = CellItem.MOUNTAIN;
         CellItem resultCellItemMountain  = universe.getCell(new Coordinate(0,0)).getCellItem();
@@ -35,11 +35,11 @@ public class CommandMountainTest  {
 
         String command = "M-0";
 
-        CommandMountain commandMountain = new CommandMountain(universe);
+        CommandMountain commandMountain = new CommandMountain();
 
 
         assertThrows(CommandLineInvalidArgumentException.class, () -> {
-            commandMountain.execute(command);
+            commandMountain.execute(command,universe);
         });
     }
 
@@ -50,11 +50,11 @@ public class CommandMountainTest  {
 
         String command = "M";
 
-        CommandMountain commandMountain = new CommandMountain(universe);
+        CommandMountain commandMountain = new CommandMountain();
 
 
         assertThrows(CommandLineInvalidArgumentException.class, () -> {
-            commandMountain.execute(command);
+            commandMountain.execute(command,universe);
         });
     }
 
@@ -65,11 +65,11 @@ public class CommandMountainTest  {
 
         String command = "M-0-900";
 
-        CommandMountain commandMountain = new CommandMountain(universe);
+        CommandMountain commandMountain = new CommandMountain();
 
 
         assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
-            commandMountain.execute(command);
+            commandMountain.execute(command,universe);
         });
     }
 }

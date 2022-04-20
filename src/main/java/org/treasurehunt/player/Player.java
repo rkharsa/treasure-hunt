@@ -3,10 +3,10 @@ package org.treasurehunt.player;
 import org.treasurehunt.player.movement.Movement;
 import org.treasurehunt.player.orientation.Orientation;
 import org.treasurehunt.player.orientation.Rotate;
-import org.treasurehunt.universe.Cell;
+import org.treasurehunt.universe.cell.Cell;
 import org.treasurehunt.universe.ProhibitedPositionException;
 import org.treasurehunt.universe.Universe;
-import org.treasurehunt.universe.CellItem;
+import org.treasurehunt.universe.cell.CellItem;
 
 public class Player {
   private Coordinate coordinate;
@@ -18,6 +18,7 @@ public class Player {
     this.coordinate = coordinate;
     this.orientation = orientation;
     this.name = name;
+    this.numberOfTreasureFound = 0;
   }
 
 
@@ -79,5 +80,15 @@ public class Player {
 
   public void setNumberOfTreasureFound(int numberOfTreasureFound) {
     this.numberOfTreasureFound = numberOfTreasureFound;
+  }
+
+  @Override
+  public String toString() {
+    return "Player{" +
+            "coordinate=" + coordinate.toString() +
+            ", orientation=" + orientation +
+            ", name='" + name + '\'' +
+            ", numberOfTreasureFound=" + numberOfTreasureFound +
+            '}';
   }
 }
