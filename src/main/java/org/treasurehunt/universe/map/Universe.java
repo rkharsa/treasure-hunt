@@ -1,9 +1,14 @@
 package org.treasurehunt.universe.map;
 
+import org.treasurehunt.player.Player;
 import org.treasurehunt.player.enums.Coordinate;
 import org.treasurehunt.universe.cell.Cell;
 import org.treasurehunt.universe.cell.CellItem;
 import org.treasurehunt.universe.cell.CellPlain;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class Universe {
     private Dimension dimension;
@@ -23,7 +28,7 @@ public class Universe {
         for (int row = 0; row < dimension.getRow(); row++) {
             for (int col = 0; col < dimension.getColumn(); col++) {
                 Coordinate pos = new Coordinate(row, col);
-                this.map[row][col] = new CellPlain(pos, null);
+                this.map[row][col] = new CellPlain(pos, new ArrayList<>());
             }
         }
     }
@@ -32,8 +37,10 @@ public class Universe {
         for (int row = 0; row < dimension.getRow(); row++) {
             for (int col = 0; col < dimension.getColumn(); col++) {
                 Cell cell = this.map[row][col];
-                if (cell.getPlayer() != null) {
-                    System.out.print(cell.getPlayer().getName() + "(" + cell.getPlayer().getNumberOfTreasureFound() + ")");
+                if (!cell.getPlayers().isEmpty()) {
+                    for (int i = 0 ; i< cell.getPlayers().size();i++) {
+                        System.out.println(cell.getPlayers().get(i).result());
+                    }
                 } else {
                     System.out.print(cell.getCellItem().getSymbol());
                 }
@@ -48,8 +55,10 @@ public class Universe {
         for (int row = 0; row < dimension.getRow(); row++) {
             for (int col = 0; col < dimension.getColumn(); col++) {
                 Cell cell = this.map[row][col];
-                if (cell.getPlayer() != null) {
-                    System.out.println(cell.getPlayer().result());
+                if (!cell.getPlayers().isEmpty()) {
+                    for (int i = 0 ; i< cell.getPlayers().size();i++) {
+                        System.out.println(cell.getPlayers().get(i).result());
+                    }
                 } else {
                     if (!CellItem.PLAIN.equals(cell.getCellItem())) {
                         System.out.println(cell.result());

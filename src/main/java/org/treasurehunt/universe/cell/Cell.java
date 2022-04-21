@@ -4,28 +4,42 @@ import org.treasurehunt.player.Player;
 import org.treasurehunt.player.enums.Coordinate;
 import org.treasurehunt.universe.exceptions.ProhibitedPositionException;
 
+import java.util.List;
+
 public abstract class Cell {
     private Coordinate coordinate;
     private CellItem cellItem;
-    private Player player;
 
-    protected Cell(CellItem cellItem, Coordinate coordinate, Player player) {
+    private List<Player> players;
+
+    protected Cell(CellItem cellItem, Coordinate coordinate, List<Player> players) {
         this.cellItem = cellItem;
         this.coordinate = coordinate;
-        this.player = player;
+        this.players = players;
     }
 
     public abstract void actionOnCell(Player player) throws ProhibitedPositionException;
 
-
-    public Player getPlayer() {
-        return player;
+    public List<Player> getPlayers() {
+        return players;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+
+    public Player getPlayerByName(String name){
+        return this.players.stream().filter(player -> name.equals(player.getName())).findFirst().orElse(null);
+    }
+    public void setPlayers(List<Player> players) {
+        this.players = players;
     }
 
+    public void addPlayer(Player player){
+        if(players.contains(player)){return;}
+        this.players.add(player);
+    }
+
+    public void removePlayer(String name){
+        this.players.removeIf(player ->name.equals(player.getName()));
+    }
     public CellItem getCellItem() {
         return cellItem;
     }
@@ -52,7 +66,7 @@ public abstract class Cell {
         return "Cell{" +
                 "coordinate=" + coordinate +
                 ", cellItem=" + cellItem +
-                ", player=" + player +
+                ", player=" + players +
                 '}';
     }
 }

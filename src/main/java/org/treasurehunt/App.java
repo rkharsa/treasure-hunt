@@ -28,7 +28,6 @@ public class App {
                 }
             }
             scanner.close();
-            universe.displayGrid();
             universe.displayList();
         } catch (FileNotFoundException e) {
             e.printStackTrace();

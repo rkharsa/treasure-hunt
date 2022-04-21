@@ -155,7 +155,7 @@ public class PlayerTest {
 
         // init player
         Coordinate coordinate = new Coordinate(1, 1);
-        Player player = new Player(coordinate, Orientation.SOUTH, "");
+        Player player = new Player(coordinate, Orientation.SOUTH, "Rani");
 
         Coordinate expectedPos = new Coordinate(2, 1);
         player.move(universe, new Forward(player.getOrientation(), player.getCoordinate()));

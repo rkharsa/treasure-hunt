@@ -4,11 +4,13 @@ import org.treasurehunt.player.Player;
 import org.treasurehunt.player.enums.Coordinate;
 import org.treasurehunt.universe.exceptions.ProhibitedPositionException;
 
+import java.util.List;
+
 public class CellMountain extends Cell {
 
 
-    public CellMountain(Coordinate coordinate, Player player) {
-        super(CellItem.MOUNTAIN, coordinate, player);
+    public CellMountain(Coordinate coordinate, List<Player> players) {
+        super(CellItem.MOUNTAIN, coordinate, players);
     }
 
     @Override

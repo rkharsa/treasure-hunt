@@ -15,7 +15,6 @@ import java.util.Objects;
 
 public class CommandPlayer implements CommandHandlerStrategy {
 
-
     @Override
     public void execute(String line, Universe universe) throws CommandLineInvalidArgumentException {
         String[] command = line.split("-");
@@ -30,7 +29,7 @@ public class CommandPlayer implements CommandHandlerStrategy {
         String movementSequence = command[5];
 
         Player player = new Player(pos, orientation, name);
-        universe.getCell(pos).setPlayer(player);
+        universe.getCell(pos).addPlayer(player);
         try {
             movePlayer(movementSequence, player, universe);
         } catch (Exception e) {

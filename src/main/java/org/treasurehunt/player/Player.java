@@ -28,12 +28,13 @@ public class Player {
             return;
         }
         Cell oldPos = universe.getCell(oldCoordinate);
-        oldPos.setPlayer(null);
+        oldPos.removePlayer(this.getName());
         Cell newPos = universe.getCell(newCoordinate);
-        newPos.setPlayer(this);
+        newPos.addPlayer(this);
         this.setCoordinate(newCoordinate);
-        newPos.actionOnCell(newPos.getPlayer());
+        newPos.actionOnCell(this);
     }
+
 
     private boolean isMountain(Universe universe, Coordinate newCoordinate) {
         return CellItem.MOUNTAIN.equals(universe.getCell(newCoordinate).getCellItem());

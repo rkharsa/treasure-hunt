@@ -4,11 +4,13 @@ import org.treasurehunt.player.Player;
 import org.treasurehunt.player.enums.Coordinate;
 import org.treasurehunt.universe.exceptions.ProhibitedPositionException;
 
+import java.util.List;
+
 public class CellTreasure extends Cell {
     private int treasure;
 
-    public CellTreasure(Coordinate coordinate, Player player, int treasure) {
-        super(CellItem.TREASURE, coordinate, player);
+    public CellTreasure(Coordinate coordinate, List<Player> players, int treasure) {
+        super(CellItem.TREASURE, coordinate, players);
         this.treasure = treasure;
     }
 
