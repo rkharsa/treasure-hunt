@@ -6,8 +6,6 @@ import org.treasurehunt.universe.cell.Cell;
 import org.treasurehunt.universe.cell.CellTreasure;
 import org.treasurehunt.universe.map.Universe;
 
-import java.util.List;
-
 public class CommandTreasure implements CommandHandlerStrategy {
 
     @Override
@@ -21,7 +19,7 @@ public class CommandTreasure implements CommandHandlerStrategy {
         Coordinate coordinate = new Coordinate(x, y);
         int numberOfTreasure = Integer.parseInt(command[3]);
         Cell oldCell = universe.getCell(coordinate);
-        CellTreasure cellTreasure = new CellTreasure(coordinate,oldCell.getPlayers(), numberOfTreasure);
+        CellTreasure cellTreasure = new CellTreasure(coordinate, oldCell.getPlayers(), numberOfTreasure);
         universe.setCell(coordinate, cellTreasure);
     }
 }

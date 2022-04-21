@@ -24,22 +24,25 @@ public abstract class Cell {
         return players;
     }
 
-
-    public Player getPlayerByName(String name){
-        return this.players.stream().filter(player -> name.equals(player.getName())).findFirst().orElse(null);
-    }
     public void setPlayers(List<Player> players) {
         this.players = players;
     }
 
-    public void addPlayer(Player player){
-        if(players.contains(player)){return;}
+    public Player getPlayerByName(String name) {
+        return this.players.stream().filter(player -> name.equals(player.getName())).findFirst().orElse(null);
+    }
+
+    public void addPlayer(Player player) {
+        if (players.contains(player)) {
+            return;
+        }
         this.players.add(player);
     }
 
-    public void removePlayer(String name){
-        this.players.removeIf(player ->name.equals(player.getName()));
+    public void removePlayer(String name) {
+        this.players.removeIf(player -> name.equals(player.getName()));
     }
+
     public CellItem getCellItem() {
         return cellItem;
     }

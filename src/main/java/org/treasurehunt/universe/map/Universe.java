@@ -1,14 +1,11 @@
 package org.treasurehunt.universe.map;
 
-import org.treasurehunt.player.Player;
 import org.treasurehunt.player.enums.Coordinate;
 import org.treasurehunt.universe.cell.Cell;
 import org.treasurehunt.universe.cell.CellItem;
 import org.treasurehunt.universe.cell.CellPlain;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.stream.Collectors;
 
 public class Universe {
     private Dimension dimension;
@@ -38,7 +35,7 @@ public class Universe {
             for (int col = 0; col < dimension.getColumn(); col++) {
                 Cell cell = this.map[row][col];
                 if (!cell.getPlayers().isEmpty()) {
-                    for (int i = 0 ; i< cell.getPlayers().size();i++) {
+                    for (int i = 0; i < cell.getPlayers().size(); i++) {
                         System.out.println(cell.getPlayers().get(i).result());
                     }
                 } else {
@@ -56,7 +53,7 @@ public class Universe {
             for (int col = 0; col < dimension.getColumn(); col++) {
                 Cell cell = this.map[row][col];
                 if (!cell.getPlayers().isEmpty()) {
-                    for (int i = 0 ; i< cell.getPlayers().size();i++) {
+                    for (int i = 0; i < cell.getPlayers().size(); i++) {
                         System.out.println(cell.getPlayers().get(i).result());
                     }
                 } else {
