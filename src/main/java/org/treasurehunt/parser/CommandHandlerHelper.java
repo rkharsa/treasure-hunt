@@ -1,7 +1,7 @@
 package org.treasurehunt.parser;
 
 import org.treasurehunt.parser.exceptions.CommandLineInvalidArgumentException;
-import org.treasurehunt.universe.Universe;
+import org.treasurehunt.universe.map.Universe;
 
 public class CommandHandlerHelper {
 
@@ -12,7 +12,7 @@ public class CommandHandlerHelper {
         this.commandHandlerStrategy = commandHandlerStrategy;
     }
 
-    public void execute(String line,Universe universe) throws CommandLineInvalidArgumentException {
-        commandHandlerStrategy.execute(line,universe);
+    public void execute(String line, Universe universe) throws CommandLineInvalidArgumentException {
+        commandHandlerStrategy.execute(line, universe);
     }
 }

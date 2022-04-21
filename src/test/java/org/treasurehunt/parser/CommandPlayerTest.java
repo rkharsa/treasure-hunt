@@ -2,11 +2,11 @@ package org.treasurehunt.parser;
 
 import org.junit.Test;
 import org.treasurehunt.parser.exceptions.CommandLineInvalidArgumentException;
-import org.treasurehunt.player.Coordinate;
 import org.treasurehunt.player.Player;
+import org.treasurehunt.player.enums.Coordinate;
 import org.treasurehunt.player.orientation.Orientation;
-import org.treasurehunt.universe.Dimension;
-import org.treasurehunt.universe.Universe;
+import org.treasurehunt.universe.map.Dimension;
+import org.treasurehunt.universe.map.Universe;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
@@ -100,7 +100,6 @@ A(Rani)|.|.|.|
         Player resultPlayer = universe.getCell(coordinate).getPlayer();
 
 
-
         assertEquals(player.toString(), resultPlayer.toString());
         assertEquals(player.toString(), resultPlayer.toString());
 
@@ -140,7 +139,6 @@ A(Rani)|.|.|.|
         Player player = new Player(coordinate, Orientation.WEST, "Rani");
         player.setNumberOfTreasureFound(5);
         Player resultPlayer = universe.getCell(coordinate).getPlayer();
-
 
 
         assertEquals(player.toString(), resultPlayer.toString());

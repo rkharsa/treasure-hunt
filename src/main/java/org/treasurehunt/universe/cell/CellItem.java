@@ -6,7 +6,8 @@ public enum CellItem {
     TREASURE("T");
 
     String symbol;
-    CellItem(String  str) {
+
+    CellItem(String str) {
         symbol = str;
     }
 

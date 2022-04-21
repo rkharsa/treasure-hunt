@@ -1,21 +1,21 @@
 package org.treasurehunt.universe.cell;
 
-import org.treasurehunt.player.Coordinate;
 import org.treasurehunt.player.Player;
-import org.treasurehunt.universe.ProhibitedPositionException;
+import org.treasurehunt.player.enums.Coordinate;
+import org.treasurehunt.universe.exceptions.ProhibitedPositionException;
 
 public abstract class Cell {
     private Coordinate coordinate;
     private CellItem cellItem;
     private Player player;
 
-    protected Cell( CellItem cellItem, Coordinate coordinate, Player player) {
+    protected Cell(CellItem cellItem, Coordinate coordinate, Player player) {
         this.cellItem = cellItem;
-        this.coordinate=coordinate ;
+        this.coordinate = coordinate;
         this.player = player;
     }
 
-    public abstract void  actionOnCell(Player player) throws ProhibitedPositionException;
+    public abstract void actionOnCell(Player player) throws ProhibitedPositionException;
 
 
     public Player getPlayer() {
@@ -25,6 +25,7 @@ public abstract class Cell {
     public void setPlayer(Player player) {
         this.player = player;
     }
+
     public CellItem getCellItem() {
         return cellItem;
     }
@@ -42,9 +43,10 @@ public abstract class Cell {
         this.coordinate = coordinate;
     }
 
-    public String result(){
+    public String result() {
         return "";
     }
+
     @Override
     public String toString() {
         return "Cell{" +

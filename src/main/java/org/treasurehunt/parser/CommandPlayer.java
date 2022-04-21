@@ -1,20 +1,20 @@
 package org.treasurehunt.parser;
 
 import org.treasurehunt.parser.exceptions.CommandLineInvalidArgumentException;
-import org.treasurehunt.player.Coordinate;
-import org.treasurehunt.player.Move;
 import org.treasurehunt.player.Player;
+import org.treasurehunt.player.enums.Coordinate;
+import org.treasurehunt.player.enums.Move;
 import org.treasurehunt.player.movement.Forward;
 import org.treasurehunt.player.orientation.Orientation;
 import org.treasurehunt.player.orientation.RotateToLeft;
 import org.treasurehunt.player.orientation.RotateToRight;
-import org.treasurehunt.universe.ProhibitedPositionException;
-import org.treasurehunt.universe.Universe;
+import org.treasurehunt.universe.exceptions.ProhibitedPositionException;
+import org.treasurehunt.universe.map.Universe;
 
 import java.util.Objects;
-import java.util.logging.Logger;
 
 public class CommandPlayer implements CommandHandlerStrategy {
+
 
     @Override
     public void execute(String line, Universe universe) throws CommandLineInvalidArgumentException {
@@ -32,9 +32,9 @@ public class CommandPlayer implements CommandHandlerStrategy {
         Player player = new Player(pos, orientation, name);
         universe.getCell(pos).setPlayer(player);
         try {
-            movePlayer(movementSequence,player,universe);
-        }catch (Exception e){
-            System.out.printf("erreur");
+            movePlayer(movementSequence, player, universe);
+        } catch (Exception e) {
+            System.out.printf("erreur de mouvement");
         }
 
     }

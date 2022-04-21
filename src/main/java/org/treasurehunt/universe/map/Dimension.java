@@ -1,10 +1,10 @@
-package org.treasurehunt.universe;
+package org.treasurehunt.universe.map;
 
 public class Dimension {
-    private int row ;
+    private int row;
     private int column;
 
-    public Dimension(int row,int column) {
+    public Dimension(int row, int column) {
         this.column = column;
         this.row = row;
     }

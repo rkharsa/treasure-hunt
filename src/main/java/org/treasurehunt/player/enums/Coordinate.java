@@ -1,12 +1,14 @@
-package org.treasurehunt.player;
+package org.treasurehunt.player.enums;
 
 public class Coordinate {
-   private  int x;
-   private  int y ;
-    public Coordinate(int x, int y){
+    private int x;
+    private int y;
+
+    public Coordinate(int x, int y) {
         this.x = x;
         this.y = y;
     }
+
     public int getY() {
         return y;
     }
@@ -24,9 +26,10 @@ public class Coordinate {
     }
 
 
-    public String result(){
-        return y+"-"+x;
+    public String result() {
+        return y + "-" + x;
     }
+
     @Override
     public String toString() {
         return "Coordinate{" +

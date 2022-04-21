@@ -3,7 +3,7 @@ package org.treasurehunt;
 import org.treasurehunt.parser.CommandFactory;
 import org.treasurehunt.parser.CommandLineCode;
 import org.treasurehunt.parser.exceptions.CommandLineInvalidArgumentException;
-import org.treasurehunt.universe.Universe;
+import org.treasurehunt.universe.map.Universe;
 
 import java.io.File;
 import java.io.FileNotFoundException;

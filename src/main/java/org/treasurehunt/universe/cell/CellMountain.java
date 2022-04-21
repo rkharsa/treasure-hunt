@@ -1,13 +1,13 @@
 package org.treasurehunt.universe.cell;
 
-import org.treasurehunt.player.Coordinate;
 import org.treasurehunt.player.Player;
-import org.treasurehunt.universe.ProhibitedPositionException;
+import org.treasurehunt.player.enums.Coordinate;
+import org.treasurehunt.universe.exceptions.ProhibitedPositionException;
 
-public class CellMountain extends  Cell{
+public class CellMountain extends Cell {
 
 
-    public CellMountain( Coordinate coordinate, Player player) {
+    public CellMountain(Coordinate coordinate, Player player) {
         super(CellItem.MOUNTAIN, coordinate, player);
     }
 
@@ -17,7 +17,7 @@ public class CellMountain extends  Cell{
     }
 
     @Override
-    public String result(){
-        return "M-"+getCoordinate().getY()+"-"+getCoordinate().getX();
+    public String result() {
+        return "M-" + getCoordinate().getY() + "-" + getCoordinate().getX();
     }
 }

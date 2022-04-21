@@ -9,20 +9,20 @@ public class RotateToLeft extends Rotate {
     @Override
     public Orientation rotate() {
         Orientation newOrientation = null;
-        switch (orientation){
+        switch (orientation) {
             case EST:
-               newOrientation=Orientation.NORTH;
+                newOrientation = Orientation.NORTH;
                 break;
             case WEST:
                 newOrientation = Orientation.SOUTH;
                 break;
             case NORTH:
-                newOrientation =Orientation.WEST;
+                newOrientation = Orientation.WEST;
                 break;
             case SOUTH:
                 newOrientation = Orientation.EST;
                 break;
         }
-        return  newOrientation;
+        return newOrientation;
     }
 }

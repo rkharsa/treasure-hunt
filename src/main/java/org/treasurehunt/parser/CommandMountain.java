@@ -1,9 +1,9 @@
 package org.treasurehunt.parser;
 
 import org.treasurehunt.parser.exceptions.CommandLineInvalidArgumentException;
-import org.treasurehunt.player.Coordinate;
+import org.treasurehunt.player.enums.Coordinate;
 import org.treasurehunt.universe.cell.CellMountain;
-import org.treasurehunt.universe.Universe;
+import org.treasurehunt.universe.map.Universe;
 
 public class CommandMountain implements CommandHandlerStrategy {
     @Override

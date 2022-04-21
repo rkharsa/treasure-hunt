@@ -6,13 +6,10 @@ public enum Orientation {
     WEST("W"),
     SOUTH("S"),
     EST("E");
-    private String orientationStr;
+    private final String orientationStr;
+
     Orientation(String orientationStr) {
         this.orientationStr = orientationStr;
-    }
-
-    public String getOrientationStr() {
-        return orientationStr;
     }
 
     public static Orientation fromString(String text) {
@@ -22,5 +19,9 @@ public enum Orientation {
             }
         }
         return null;
+    }
+
+    public String getOrientationStr() {
+        return orientationStr;
     }
 }

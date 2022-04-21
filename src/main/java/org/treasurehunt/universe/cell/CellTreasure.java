@@ -1,11 +1,11 @@
 package org.treasurehunt.universe.cell;
 
-import org.treasurehunt.player.Coordinate;
 import org.treasurehunt.player.Player;
-import org.treasurehunt.universe.ProhibitedPositionException;
+import org.treasurehunt.player.enums.Coordinate;
+import org.treasurehunt.universe.exceptions.ProhibitedPositionException;
 
-public class CellTreasure extends Cell{
-    private  int treasure;
+public class CellTreasure extends Cell {
+    private int treasure;
 
     public CellTreasure(Coordinate coordinate, Player player, int treasure) {
         super(CellItem.TREASURE, coordinate, player);
@@ -15,7 +15,9 @@ public class CellTreasure extends Cell{
 
     @Override
     public void actionOnCell(Player player) throws ProhibitedPositionException {
-        if(treasure<=0){return;}
+        if (treasure <= 0) {
+            return;
+        }
         treasure--;
         player.findTreasure();
     }
@@ -29,7 +31,7 @@ public class CellTreasure extends Cell{
     }
 
     @Override
-    public String result(){
-        return "T-"+getCoordinate().getY()+"-"+getCoordinate().getX()+"-"+treasure;
+    public String result() {
+        return "T-" + getCoordinate().getY() + "-" + getCoordinate().getX() + "-" + treasure;
     }
 }

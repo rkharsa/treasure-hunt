@@ -1,6 +1,4 @@
-package org.treasurehunt.player;
-
-import org.treasurehunt.player.orientation.Orientation;
+package org.treasurehunt.player.enums;
 
 public enum Move {
     L("G"),
@@ -8,14 +6,10 @@ public enum Move {
     F("A");
 
     private final String moveStr;
+
     Move(String s) {
-        moveStr=s;
+        moveStr = s;
     }
-
-    public String getMoveStr() {
-        return moveStr;
-    }
-
 
     public static Move fromString(String text) {
         for (Move b : Move.values()) {
@@ -24,6 +18,10 @@ public enum Move {
             }
         }
         return null;
+    }
+
+    public String getMoveStr() {
+        return moveStr;
     }
 
 }
