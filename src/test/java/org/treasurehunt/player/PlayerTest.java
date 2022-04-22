@@ -1,7 +1,6 @@
-package org.treasurehunt;
+package org.treasurehunt.player;
 
 import org.junit.Test;
-import org.treasurehunt.player.Player;
 import org.treasurehunt.player.enums.Coordinate;
 import org.treasurehunt.player.movement.Forward;
 import org.treasurehunt.player.orientation.Orientation;
@@ -16,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 public class PlayerTest {
 
     @Test
-    public void should_go_north_when_player_turn_left_with_current_orientation_est() {
+    public void whenPlayerTurnLeftWithCurrentOrientationEst_thenGoNorth() {
         Coordinate coordinate = new Coordinate(1, 1);
         Player player = new Player(coordinate, Orientation.EST, "Rani");
 
@@ -30,7 +29,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void should_go_west_when_player_turn_left_with_current_orientation_north() {
+    public void whenPlayerTurnLeftWithCurrentOrientationNorth_thenGoWest() {
         Coordinate coordinate = new Coordinate(1, 1);
         Player player = new Player(coordinate, Orientation.NORTH, "");
 
@@ -44,7 +43,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void should_go_south_when_player_turn_left_with_current_orientation_west() {
+    public void whenPlayerTurnLeftWithCurrentOrientationWest_thenGoSouth() {
         Coordinate coordinate = new Coordinate(1, 1);
         Player player = new Player(coordinate, Orientation.WEST, "");
 
@@ -58,7 +57,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void should_go_est_when_player_turn_left_with_current_orientation_south() {
+    public void whenPlayerTurnLeftWithCurrentOrientationSouth_thenGoEst() {
         Coordinate coordinate = new Coordinate(1, 1);
         Player player = new Player(coordinate, Orientation.SOUTH, "");
 
@@ -71,8 +70,9 @@ public class PlayerTest {
         assertEquals(orientationExpectedAfterTurn, player.getOrientation());
     }
 
+
     @Test
-    public void should_go_north_when_player_turn_right_with_current_orientation_est() {
+    public void whenPlayerTurnRightWithCurrentOrientationEst_thenGoNorth() {
         Coordinate coordinate = new Coordinate(1, 1);
         Player player = new Player(coordinate, Orientation.EST, "");
 
@@ -85,8 +85,9 @@ public class PlayerTest {
         assertEquals(orientationExpectedAfterTurn, player.getOrientation());
     }
 
+
     @Test
-    public void should_go_west_when_player_turn_right_with_current_orientation_north() {
+    public void whenPlayerTurnRightWithCurrentOrientationNorth_thenGoWest() {
         Coordinate coordinate = new Coordinate(1, 1);
         Player player = new Player(coordinate, Orientation.NORTH, "");
 
@@ -100,7 +101,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void should_go_south_when_player_turn_right_with_current_orientation_west() {
+    public void whenPlayerTurnRightWithCurrentOrientationWest_thenGoSouth() {
         Coordinate coordinate = new Coordinate(1, 1);
         Player player = new Player(coordinate, Orientation.WEST, "");
 
@@ -113,8 +114,9 @@ public class PlayerTest {
         assertEquals(orientationExpectedAfterTurn, player.getOrientation());
     }
 
+
     @Test
-    public void should_go_est_when_player_turn_right_with_current_orientation_south() {
+    public void whenPlayerTurnRightWithCurrentOrientationSouth_thenGoEst() {
         Coordinate coordinate = new Coordinate(1, 1);
         Player player = new Player(coordinate, Orientation.SOUTH, "");
 
@@ -129,7 +131,7 @@ public class PlayerTest {
 
 
     @Test
-    public void should_go_up_when_player_has_current_orientation_north() throws ProhibitedPositionException {
+    public void whenPlayerForwardWithCurrentOrientationNorth_thenGoUp() throws ProhibitedPositionException {
         // init universe
         final Dimension dimension = new Dimension(2, 3);
         Universe universe = new Universe(dimension);
@@ -147,7 +149,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void should_go_down_when_player_has_current_orientation_south() throws ProhibitedPositionException {
+    public void whenPlayerForwardWithCurrentOrientationEst_thenGoLeft() throws ProhibitedPositionException {
         // init universe
         final Dimension dimension = new Dimension(3, 5);
         Universe universe = new Universe(dimension);
@@ -155,9 +157,28 @@ public class PlayerTest {
 
         // init player
         Coordinate coordinate = new Coordinate(1, 1);
-        Player player = new Player(coordinate, Orientation.SOUTH, "Rani");
+        Player player = new Player(coordinate, Orientation.EST, "Rani");
 
-        Coordinate expectedPos = new Coordinate(2, 1);
+        Coordinate expectedPos = new Coordinate(1, 2);
+        player.move(universe, new Forward(player.getOrientation(), player.getCoordinate()));
+
+        assertEquals(expectedPos.toString(), player.getCoordinate().toString());
+
+    }
+
+
+    @Test
+    public void whenPlayerForwardWithCurrentOrientationWest_thenGoRight() throws ProhibitedPositionException {
+        // init universe
+        final Dimension dimension = new Dimension(3, 5);
+        Universe universe = new Universe(dimension);
+        universe.initMap();
+
+        // init player
+        Coordinate coordinate = new Coordinate(1, 1);
+        Player player = new Player(coordinate, Orientation.WEST, "Rani");
+
+        Coordinate expectedPos = new Coordinate(1, 0);
         player.move(universe, new Forward(player.getOrientation(), player.getCoordinate()));
 
         assertEquals(expectedPos.toString(), player.getCoordinate().toString());

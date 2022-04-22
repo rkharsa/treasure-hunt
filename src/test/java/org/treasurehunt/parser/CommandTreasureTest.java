@@ -13,7 +13,7 @@ import static org.junit.Assert.assertThrows;
 public class CommandTreasureTest {
 
     @Test
-    public void should_set_1_treasures_in_cell() throws CommandLineInvalidArgumentException {
+    public void whenCommandIsValid_thenSet1TreasuresInCell() throws CommandLineInvalidArgumentException {
         Universe universe = new Universe(new Dimension(10, 15));
         universe.initMap();
 
@@ -30,7 +30,7 @@ public class CommandTreasureTest {
     }
 
     @Test
-    public void should_set_2_treasures_in_cell() throws CommandLineInvalidArgumentException {
+    public void whenCommandIsValid_thenSet2treasuresInCell() throws CommandLineInvalidArgumentException {
         Universe universe = new Universe(new Dimension(10, 15));
         universe.initMap();
 
@@ -92,7 +92,7 @@ public class CommandTreasureTest {
     }
 
     @Test()
-    public void whenCommandHasCoordinateInvalid_thenThrowsArrayIndexOutOfBoundsException() {
+    public void whenCommandHasInvalidCoordinates_thenThrowsArrayIndexOutOfBoundsException() {
         Universe universe = new Universe(new Dimension(10, 15));
         universe.initMap();
 

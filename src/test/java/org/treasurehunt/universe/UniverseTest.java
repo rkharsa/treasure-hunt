@@ -1,4 +1,4 @@
-package org.treasurehunt;
+package org.treasurehunt.universe;
 
 import org.junit.Test;
 import org.treasurehunt.player.enums.Coordinate;
@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class UniverseTest {
 
     @Test
-    public void shloud_init_map_with_dimension_2_3() {
+    public void shloud_init_map_with_dimension_2x3() {
         final Dimension dimension = new Dimension(2, 3);
         Universe universe = new Universe(dimension);
         universe.initMap();
@@ -19,18 +19,6 @@ public class UniverseTest {
         assertEquals(universe.getMap().length, expectedRowDim);
         assertEquals(universe.getMap()[0].length, expectedColDim);
 
-    /*       new Cell(0, CellItem.MOUNTAIN,new Coordinate(0,0));
-    Cell[][] mapExpected =  {
-            {new Cell(0, CellItem.MOUNTAIN,new Coordinate(0,0)),
-                    new Cell(0, CellItem.MOUNTAIN,new Coordinate(0,1)),
-                    new Cell(0, CellItem.MOUNTAIN,new Coordinate(0,2))},
-            {new Cell(0, CellItem.MOUNTAIN,new Coordinate(1,0)),
-                    new Cell(0, CellItem.MOUNTAIN,new Coordinate(1,1)),
-                            new Cell(0, CellItem.MOUNTAIN,new Coordinate(1,2))
-            }
-    };
-
-    assertEquals(Arrays.deepToString(universe.getMap()), Arrays.deepToString(mapExpected));*/
     }
 
     @Test

@@ -18,7 +18,7 @@ public class CommandPlayerTest {
      .     |.|.|.|
      */
     @Test
-    public void shouldSetPLayerInCell_whenCommandIsValid() throws CommandLineInvalidArgumentException {
+    public void whenIsValidCommand_thenSetPLayerInCell() throws CommandLineInvalidArgumentException {
         Universe universe = new Universe(new Dimension(4, 3));
         universe.initMap();
 
@@ -41,7 +41,7 @@ A(Rani)|.|.|.|
  .     |.|.|.|
  */
     @Test
-    public void shouldThrowCommandLineInvalidException_whenCommandIsInvalid() {
+    public void whenCommandIsInvalid_thenThrowCommandLineInvalidException() {
         Universe universe = new Universe(new Dimension(4, 3));
         universe.initMap();
 
@@ -55,7 +55,7 @@ A(Rani)|.|.|.|
     }
 
     @Test
-    public void playerShouldBeInBottomRightCorner_whenSequenceOfMoveIsAAAADAAA() throws CommandLineInvalidArgumentException {
+    public void whenSequenceOfMoveIsAAAADAAA_playerShouldBeInBottomRightCorner() throws CommandLineInvalidArgumentException {
 
         Universe universe = new Universe(new Dimension(4, 3));
         universe.initMap();
@@ -74,7 +74,7 @@ A(Rani)|.|.|.|
     }
 
     @Test
-    public void playerShouldBeInBottomRightCornerWith2Treasures_whenSequenceOfMoveIsAAAADAAA() throws CommandLineInvalidArgumentException {
+    public void whenSequenceOfMoveIsAAAADAAA_thenPlayerShouldBeInBottomRightCornerWith2Treasures() throws CommandLineInvalidArgumentException {
 
         Universe universe = new Universe(new Dimension(4, 3));
         universe.initMap();
@@ -108,7 +108,7 @@ A(Rani)|.|.|.|
     }
 
     @Test
-    public void playerShouldBeInBottomCenterWith5Treasures_whenSequenceOfMoveIsAAAADAAADA() throws CommandLineInvalidArgumentException {
+    public void whenSequenceOfMoveIsAAAADAAADA_thenPlayerShouldBeInBottomCenterWith5Treasures() throws CommandLineInvalidArgumentException {
 
         Universe universe = new Universe(new Dimension(4, 3));
         universe.initMap();
@@ -150,7 +150,7 @@ A(Rani)|.|.|.|
 
 
     @Test
-    public void twoPlayersShouldBeInBottomCenterWith5Treasures_whenSequenceOfMoveIsAAAADAAADA() throws CommandLineInvalidArgumentException {
+    public void whenSequenceOfMoveIsAAAADAAADA_thenTwoPlayersShouldBeInBottomCenterWith5Treasures() throws CommandLineInvalidArgumentException {
 
         Universe universe = new Universe(new Dimension(4, 3));
         universe.initMap();

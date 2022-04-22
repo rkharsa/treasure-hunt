@@ -2,7 +2,7 @@ package org.treasurehunt.player.orientation;
 
 public abstract class Rotate {
 
-    Orientation orientation;
+    protected Orientation orientation;
 
     protected Rotate(Orientation orientation) {
         this.orientation = orientation;
