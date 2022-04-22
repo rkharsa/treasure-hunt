@@ -5,15 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aef405e9-3ccb-4ad9-b43a-4b451659eee4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit3 Test Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="27yjX7stJbKoeaWQy2oG5LxHlPq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -24,9 +36,121 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.treasurehunt.universe" />
+      <recent name="org.treasurehunt.player" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.treasurehunt.parser" />
+      <recent name="org.treasurehunt.player.movement" />
+      <recent name="org.treasurehunt.player.orientation" />
+      <recent name="org.treasurehunt.universe.cell" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PlayerTest.whenPlayerForwardWithCurrentOrientationWest_thenGoRight">
+    <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="treasure-hunt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.treasurehunt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.treasurehunt" />
+      <option name="MAIN_CLASS_NAME" value="org.treasurehunt.AppTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommandFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="treasure-hunt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.treasurehunt.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.treasurehunt.parser" />
+      <option name="MAIN_CLASS_NAME" value="org.treasurehunt.parser.CommandFactoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommandFactoryTest.whenGetCommandHasCommandLineCodeM_thenReturnCommandMountain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="treasure-hunt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.treasurehunt.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.treasurehunt.parser" />
+      <option name="MAIN_CLASS_NAME" value="org.treasurehunt.parser.CommandFactoryTest" />
+      <option name="METHOD_NAME" value="whenGetCommandHasCommandLineCodeM_thenReturnCommandMountain" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommandFactoryTest.whenGetCommandHasCommandLineCodeUnknown_thenThrowCommandLineInvalidArgumentException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="treasure-hunt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.treasurehunt.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.treasurehunt.parser" />
+      <option name="MAIN_CLASS_NAME" value="org.treasurehunt.parser.CommandFactoryTest" />
+      <option name="METHOD_NAME" value="whenGetCommandHasCommandLineCodeUnknown_thenThrowCommandLineInvalidArgumentException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest.whenPlayerForwardWithCurrentOrientationWest_thenGoRight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="treasure-hunt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.treasurehunt.player.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.treasurehunt.player" />
+      <option name="MAIN_CLASS_NAME" value="org.treasurehunt.player.PlayerTest" />
+      <option name="METHOD_NAME" value="whenPlayerForwardWithCurrentOrientationWest_thenGoRight" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PlayerTest.whenPlayerForwardWithCurrentOrientationWest_thenGoRight" />
+        <item itemvalue="JUnit.AppTest" />
+        <item itemvalue="JUnit.CommandFactoryTest.whenGetCommandHasCommandLineCodeUnknown_thenThrowCommandLineInvalidArgumentException" />
+        <item itemvalue="JUnit.CommandFactoryTest" />
+        <item itemvalue="JUnit.CommandFactoryTest.whenGetCommandHasCommandLineCodeM_thenReturnCommandMountain" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -36,8 +160,12 @@
       <option name="presentableId" value="Default" />
       <updated>1650299256490</updated>
       <workItem from="1650299258780" duration="2000" />
+      <workItem from="1650617680444" duration="5572000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -49,5 +177,50 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/treasurehunt/player/Player.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/treasurehunt/player/Player.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/treasurehunt/player/Player.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/treasurehunt/player/Player.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/treasurehunt/parser/CommandFactoryTest.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/treasure_hunt$PlayerTest_whenPlayerForwardWithCurrentOrientationWest_thenGoRight.ic" NAME="PlayerTest.whenPlayerForwardWithCurrentOrientationWest_thenGoRight Coverage Results" MODIFIED="1650623077497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.treasurehunt.player.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/treasure_hunt$UniverseTest.ic" NAME="UniverseTest Coverage Results" MODIFIED="1650319794351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.treasurehunt.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/treasure_hunt$CommandFactoryTest_whenGetCommandHasCommandLineCodeUnknown_thenThrowCommandLineInvalidArgumentException.ic" NAME="CommandFactoryTest.whenGetCommandHasCommandLineCodeUnknown_thenThrowCommandLineInvalidArgumentException Coverage Results" MODIFIED="1650622993635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.treasurehunt.parser.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/treasure_hunt$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1650623039698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.treasurehunt.*</FILTER>
+    </SUITE>
   </component>
 </project>
